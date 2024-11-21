@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Management - Daftar Hewan</title>
+</head>
+
+<body>
+    <%- include('layouts/navbar') %>
+        <h1>Daftar Hewan</h1>
+        <a href="/animals/new">Tambah Hewan Baru</a>
+        <style>
+            table {
+                border-collapse: collapse;
+                /* Menghindari jarak antar border sel */
+                width: 100%;
+                /* Menyusun tabel agar memenuhi lebar halaman */
+            }
+            
+            table,
+            th,
+            td {
+                border: 1px solid black;
+                /* Menambahkan border hitam untuk tabel dan sel */
+            }
+            
+            th,
+            td {
+                padding: 10px;
+                /* Menambahkan padding pada cell */
+                text-align: left;
+                /* Menyusun teks di kiri */
+            }
+        </style>
+        <table>
+            <tr>
+                <th>Nama</th>
+                <th>Spesies</th>
+                <th>Usia</th>
+            </tr>
+            <% animals.forEach(animal => { %>
+                <tr>
+                    <td>
+                        <%= animal.name %>
+                    </td>
+                    <td>
+                        <%= animal.species %>
+                    </td>
+                    <td>
+                        <%= animal.age %>
+                    </td>
+                </tr>
+                <% }) %>
+        </table>
+</body>
+
+
+</html>
